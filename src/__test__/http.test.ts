@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { history } from 'src/history';
 import { http } from '../http';
 import { TOKEN_EXPIRED, TOKEN_REFRESH_URL } from '../token';
 import { Token } from '../types';
@@ -115,22 +114,6 @@ describe('Http Module Test', () => {
 
         // origin -> refresh token -X-> DEAD END
         expect(requestSpy).toBeCalledTimes(2);
-      });
-
-      it('토큰 갱신에 실패 하면, 정의된 fallback url 로 이동한다.', async () => {
-        server.use(
-          rest.post(TOKEN_REFRESH_URL, (req, res, ctx) => {
-            return res(ctx.status(401), ctx.json({ code: TOKEN_EXPIRED }));
-          })
-        );
-
-        // initialize refresh token
-        http.token.set(undefined, 'refresh-token');
-        try {
-          await http.requestRaw({ url: '/need-auth/', method: 'GET' });
-        } catch (e) {
-          expect(history.location.pathname).toBe('/login');
-        }
       });
 
       it('여러 요청에서 토큰 갱신을 시도했을 때 첫 시도에서 실패시 토큰 삭제에 대한 방어', async () => {
