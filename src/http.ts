@@ -1,6 +1,5 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import stringify from 'fast-json-stable-stringify';
-import { history } from 'src/history';
 import { TokenManager, TOKEN_EXPIRED } from './token';
 import { APIError, ReqParams, RequestConfig } from './types';
 import { isNil } from './utils/isNil';
@@ -13,32 +12,23 @@ if (isNil(BASE_URL)) {
 
 type HttpOptions = {
   baseURL: string;
-  tokenFallbackURL: string;
 };
 
 class Http {
   private _instance: AxiosInstance;
   private _token: TokenManager;
   private _onGoingReq: Map<string, Promise<AxiosResponse<unknown>>>;
-  private _tokenFallbackUrl: string;
 
-  constructor({ baseURL, tokenFallbackURL }: HttpOptions) {
+  constructor({ baseURL }: HttpOptions) {
     this._instance = axios.create({ baseURL });
     this._token = new TokenManager(this);
     this._onGoingReq = new Map();
-    this._tokenFallbackUrl = tokenFallbackURL;
   }
 
   private async _retryAfterRefreshToken<T, P extends ReqParams>(
     origin: RequestConfig<P>
   ): Promise<AxiosResponse<T>> {
-    try {
-      await this._token.refresh();
-    } catch (e) {
-      const from = `${history.location.pathname}${history.location.search}`;
-      history.replace('/login', { from });
-      throw e;
-    }
+    await this._token.refresh();
     return this.requestRaw<T, P>(origin, false);
   }
 
@@ -106,5 +96,4 @@ class Http {
 export type { Http };
 export const http = new Http({
   baseURL: BASE_URL,
-  tokenFallbackURL: '/login',
 });
