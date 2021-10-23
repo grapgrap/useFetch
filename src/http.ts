@@ -4,7 +4,11 @@ import { history } from 'src/history';
 import { TokenManager, TOKEN_EXPIRED } from './token';
 import { APIError, ReqParams, RequestConfig } from './types';
 
-const BASE_URL = process.env.EXT_API_BASE_URL;
+const BASE_URL = process.env.BASE_URL;
+
+if (!BASE_URL) {
+  throw Error('[http]: BASE_URL is undefined. Please check your env variable');
+}
 
 type HttpOptions = {
   baseURL: string;

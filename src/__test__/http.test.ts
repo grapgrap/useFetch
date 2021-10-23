@@ -211,7 +211,9 @@ describe('Http Module Test', () => {
       try {
         await http.request({ url: '/network-fail/', method: 'GET' });
       } catch (e) {
-        expect(e.message).toEqual('Network Error');
+        if (e instanceof Error) {
+          expect(e.message).toEqual('Network Error');
+        }
       }
     });
   });
