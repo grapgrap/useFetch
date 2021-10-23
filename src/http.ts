@@ -3,10 +3,11 @@ import stringify from 'fast-json-stable-stringify';
 import { history } from 'src/history';
 import { TokenManager, TOKEN_EXPIRED } from './token';
 import { APIError, ReqParams, RequestConfig } from './types';
+import { isNil } from './utils/isNil';
 
 const BASE_URL = process.env.BASE_URL;
 
-if (!BASE_URL) {
+if (isNil(BASE_URL)) {
   throw Error('[http]: BASE_URL is undefined. Please check your env variable');
 }
 

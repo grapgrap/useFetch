@@ -50,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:fc44eba47394db13620b302126ac35d04890129873a2fa1122d9ce16d314d042bb6818e42838db3ed3f040b00435090fb3ea75f276116ce21607a525fedc0169#npm:5.1.0"],
             ["axios", "npm:0.23.0"],
             ["core-js", "npm:3.18.3"],
+            ["dotenv", "npm:10.0.0"],
             ["eslint", "npm:8.1.0"],
             ["eslint-config-prettier", "virtual:fc44eba47394db13620b302126ac35d04890129873a2fa1122d9ce16d314d042bb6818e42838db3ed3f040b00435090fb3ea75f276116ce21607a525fedc0169#npm:8.3.0"],
             ["eslint-plugin-react", "virtual:fc44eba47394db13620b302126ac35d04890129873a2fa1122d9ce16d314d042bb6818e42838db3ed3f040b00435090fb3ea75f276116ce21607a525fedc0169#npm:7.26.1"],
@@ -4904,6 +4905,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["dotenv", [
+        ["npm:10.0.0", {
+          "packageLocation": "./.yarn/cache/dotenv-npm-10.0.0-36b272df25-f412c5fe8c.zip/node_modules/dotenv/",
+          "packageDependencies": [
+            ["dotenv", "npm:10.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["electron-to-chromium", [
         ["npm:1.3.877", {
           "packageLocation": "./.yarn/cache/electron-to-chromium-npm-1.3.877-7aeb53777d-1642a7dc06.zip/node_modules/electron-to-chromium/",
@@ -9474,6 +9484,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:fc44eba47394db13620b302126ac35d04890129873a2fa1122d9ce16d314d042bb6818e42838db3ed3f040b00435090fb3ea75f276116ce21607a525fedc0169#npm:5.1.0"],
             ["axios", "npm:0.23.0"],
             ["core-js", "npm:3.18.3"],
+            ["dotenv", "npm:10.0.0"],
             ["eslint", "npm:8.1.0"],
             ["eslint-config-prettier", "virtual:fc44eba47394db13620b302126ac35d04890129873a2fa1122d9ce16d314d042bb6818e42838db3ed3f040b00435090fb3ea75f276116ce21607a525fedc0169#npm:8.3.0"],
             ["eslint-plugin-react", "virtual:fc44eba47394db13620b302126ac35d04890129873a2fa1122d9ce16d314d042bb6818e42838db3ed3f040b00435090fb3ea75f276116ce21607a525fedc0169#npm:7.26.1"],
