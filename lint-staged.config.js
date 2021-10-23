@@ -1,4 +1,4 @@
 module.exports = {
-  'src/**/*.{js,ts,tsx}': ['eslint --cache'],
-  'src/**/*': ['prettier'],
+  '{src,tests}/**/*.{js,ts,tsx}': ['eslint --config .eslintrc --fix'],
+  '{src,tests}/**/*': ['prettier --write'],
 };
