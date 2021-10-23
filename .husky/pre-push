@@ -22,7 +22,4 @@ yarn test || (
   echo '❌ ❌ ❌ Test Failed ❌ ❌ ❌'
 )
 
-yarn build:staging --no-stats || (
-  echo '❌ ❌ ❌ Build Failed ❌ ❌ ❌'
-  false;
-)
+echo '✅ ✅ ✅ All passed. Pushing them. ✅ ✅ ✅'
