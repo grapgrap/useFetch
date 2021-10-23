@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🏗️ 👷 Pre-commit Check'
+
+echo '🏗️ 👷 Linting...'
+
+yarn lint-staged || (
+  echo '❌ ❌ ❌ Lint Failed ❌ ❌ ❌';
+  false;
+)
+
+echo '✅ ✅ ✅ All passed. Committing them. ✅ ✅ ✅'
