@@ -6,6 +6,9 @@
   "module": "dist/index.esm.js",
   "license": "MIT",
   "packageManager": "yarn@3.0.2",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "set-husky": "husky install",
     "sdk-update": "yarn dlx @yarnpkg/sdks vscode",
