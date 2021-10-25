@@ -1,9 +1,9 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { http } from '../src/http';
-import { TOKEN_REFRESH_URL } from '../src/token';
-import { Token } from '../src/types';
-import { useToken } from '../src/useToken';
+import { http } from 'src/http';
+import { TOKEN_REFRESH_URL } from 'src/token';
+import { Token } from 'src/types';
+import { useToken } from 'src/useToken';
 import { act, renderHook } from './utils/renderHook';
 
 const server = setupServer(
