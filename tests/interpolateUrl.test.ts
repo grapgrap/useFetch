@@ -1,4 +1,4 @@
-import { interpolateUrl } from '../interpolateUrl';
+import { interpolateUrl } from '../src/interpolateUrl';
 
 describe('interpolateUrl Function Test', () => {
   it('함수는 보간 대상이 있을 때, param 에서 보간 값을 찾아 보간을 수행한다.', () => {

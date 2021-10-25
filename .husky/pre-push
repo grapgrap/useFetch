@@ -19,7 +19,7 @@ yarn type || (
 echo '🏗️ 👷 Testing...'
 
 yarn test || (
-  echo '❌ ❌ ❌ Test Failed ❌ ❌ ❌'
+  echo '❌ ❌ ❌ Build Failed ❌ ❌ ❌'
 )
 
 echo '✅ ✅ ✅ All passed. Pushing them. ✅ ✅ ✅'

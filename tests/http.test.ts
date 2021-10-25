@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { http } from '../http';
-import { TOKEN_EXPIRED, TOKEN_REFRESH_URL } from '../token';
-import { Token } from '../types';
+import { http } from '../src/http';
+import { TOKEN_EXPIRED, TOKEN_REFRESH_URL } from '../src/token';
+import { Token } from '../src/types';
 
 const success = { status: 'success' };
 const error = { code: 'server error' };

@@ -1,9 +1,9 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { useFetch } from 'src/useFetch';
-import { renderHook } from 'tests/renderHook';
-import { http } from '../http';
-import { APIDef } from '../types';
+import { http } from '../src/http';
+import { APIDef } from '../src/types';
+import { useFetch } from '../src/useFetch';
+import { renderHook } from './utils/renderHook';
 
 const server = setupServer(
   rest.get('/test-url-stub/', (req, res, ctx) => {

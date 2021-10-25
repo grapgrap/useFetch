@@ -1,4 +1,4 @@
-import { transformFormDataForAttachments } from '../transformFormData';
+import { transformFormDataForAttachments } from '../src/transformFormData';
 
 describe('transformFormData Function Test', () => {
   const data = {

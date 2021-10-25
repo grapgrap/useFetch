@@ -4,7 +4,7 @@
       "@babel/preset-env",
       {
         "targets": "defaults, ie 11",
-        "useBuiltIns": "entry",
+        "useBuiltIns": "usage",
         "corejs": 3,
         "shippedProposals": true
       }

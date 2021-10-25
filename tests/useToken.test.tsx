@@ -1,10 +1,10 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { act, renderHook } from 'tests/renderHook';
-import { http } from '../http';
-import { TOKEN_REFRESH_URL } from '../token';
-import { Token } from '../types';
-import { useToken } from '../useToken';
+import { http } from '../src/http';
+import { TOKEN_REFRESH_URL } from '../src/token';
+import { Token } from '../src/types';
+import { useToken } from '../src/useToken';
+import { act, renderHook } from './utils/renderHook';
 
 const server = setupServer(
   rest.post(TOKEN_REFRESH_URL, (req, res, ctx) => {
