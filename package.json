@@ -17,7 +17,8 @@
     "clean:cache": "rm -rf tsconfig.tsbuildinfo && rm -rf .rollup.cache",
     "clean:dist": "rm -rf dist",
     "build": "yarn clean:dist && rollup --config rollup.config.js",
-    "type": "tsc --project tsconfig.json --noEmit"
+    "type": "tsc --project tsconfig.json --noEmit",
+    "release": "yarn npm publish --access public"
   },
   "dependencies": {
     "axios": "^0.23.0",
