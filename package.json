@@ -12,7 +12,7 @@
   "scripts": {
     "set-husky": "husky install",
     "sdk-update": "yarn dlx @yarnpkg/sdks vscode",
-    "postinstall": "set-husky && sdk-update",
+    "postinstall": "yarn set-husky && yarn sdk-update",
     "test": "jest --config jest.config.js",
     "clean:cache": "rm -rf tsconfig.tsbuildinfo && rm -rf .rollup.cache",
     "clean:dist": "rm -rf dist",

@@ -18,7 +18,7 @@ const plugins = [
     extensions: ['.ts', '.tsx'],
   }),
   typescript({
-    tsconfig: './tsconfig.json',
+    tsconfig: './tsconfig.build.json',
     declaration: true,
     declarationDir: '',
   }),
