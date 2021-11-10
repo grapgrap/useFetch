@@ -91,4 +91,10 @@ describe('useFetch Hook Test', () => {
     renderHook(() => useFetch(needInterpolateDef));
     expect(requestSpy).not.toBeCalled();
   });
+
+  it('API Def가 제공되지 않으면, API를 호출하지 않는다.', () => {
+    const flag = false; // KNOWN: always false.
+    renderHook(() => useFetch(flag ? def : undefined));
+    expect(requestSpy).not.toBeCalled();
+  });
 });
