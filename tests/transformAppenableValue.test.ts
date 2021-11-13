@@ -1,4 +1,4 @@
-import { transformAppendableValue } from 'src/transformAppendableValue';
+import { transformAppendableValue } from 'src/__core__/transformAppendableValue';
 
 describe('transformAppendableValue Function Test', () => {
   describe('함수는 입력된 값이 FormData에 append 될 수 있도록 입력된 값을 변환한다.', () => {

@@ -1,6 +1,6 @@
-import { castConfigWithDef } from 'src/castConfigWithDef';
-import * as interpolateUrlModule from 'src/interpolateUrl';
-import * as transformFormDataModule from 'src/transformFormData';
+import { castConfigWithDef } from 'src/__core__/castConfigWithDef';
+import * as interpolateUrlModule from 'src/__core__/interpolateUrl';
+import * as transformFormDataModule from 'src/__core__/transformFormData';
 
 describe('castConfigWithDef Function Test', () => {
   it('함수는 APIDef를 RequestConfig으로 캐스팅한다.', () => {

@@ -2,9 +2,8 @@ import { AxiosRequestConfig } from 'axios';
 import stringify from 'fast-json-stable-stringify';
 import { useMemo } from 'react';
 import useSWR, { KeyedMutator, SWRConfiguration } from 'swr';
-import { castConfigWithDef } from './castConfigWithDef';
 import { APIDef, APIError } from './types';
-import { http } from './__core__/http';
+import { castConfigWithDef, http } from './__core__';
 
 type UseFetch<Data> = {
   data?: Data;
