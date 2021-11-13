@@ -15,7 +15,6 @@ type UseFetch<Data> = {
 export const useFetch = <Data, Params>(
   def?: APIDef<Data, Params>,
   params?: Params,
-  fallbackData?: Data,
   options: {
     axiosConfig?: AxiosRequestConfig;
     swrConfig?: SWRConfiguration<Data>;
@@ -31,9 +30,6 @@ export const useFetch = <Data, Params>(
     key,
     !merged.url ? null : () => http.request<Data, Params>(merged),
     {
-      shouldRetryOnError: false,
-      revalidateOnFocus: false,
-      fallbackData,
       ...swrConfig,
     }
   );
