@@ -1,3 +1,2 @@
-export { http } from './http';
+export { http, Http } from './http';
 export * from './useFetch';
-export * from './useToken';

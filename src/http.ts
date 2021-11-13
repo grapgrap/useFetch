@@ -1,7 +1,6 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import stringify from 'fast-json-stable-stringify';
-import { TokenManager, TOKEN_EXPIRED } from './token';
-import { APIError, ReqParams, RequestConfig } from './types';
+import { ReqParams, RequestConfig } from './types';
 import { isNil } from './utils/isNil';
 
 const BASE_URL = process.env.BASE_URL;
@@ -14,38 +13,21 @@ type HttpOptions = {
   baseURL: string;
 };
 
+type Fetcher = AxiosInstance;
+
 class Http {
-  private _instance: AxiosInstance;
-  private _token: TokenManager;
+  private _fetcher: Fetcher;
   private _onGoingReq: Map<string, Promise<AxiosResponse<unknown>>>;
 
   constructor({ baseURL }: HttpOptions) {
-    this._instance = axios.create({ baseURL });
-    this._token = new TokenManager(this);
+    this._fetcher = axios.create({ baseURL });
     this._onGoingReq = new Map();
   }
 
-  private async _retryAfterRefreshToken<T, P extends ReqParams>(
-    origin: RequestConfig<P>
-  ): Promise<AxiosResponse<T>> {
-    await this._token.refresh();
-    return this.requestRaw<T, P>(origin, false);
-  }
-
-  public get instance(): AxiosInstance {
-    return this._instance;
-  }
-
-  public get token(): TokenManager {
-    return this._token;
-  }
-
   public async requestRaw<T, P extends ReqParams>(
-    config: RequestConfig<P>,
-    shouldRetryWhenTokenExpired = true
+    config: RequestConfig<P>
   ): Promise<AxiosResponse<T>> {
     const key = stringify(config);
-
     try {
       const duplicatedRequest = this._onGoingReq.get(key) as Promise<
         AxiosResponse<T>
@@ -55,45 +37,30 @@ class Http {
         return await duplicatedRequest;
       }
 
-      const currentRequest = this._instance.request<T>(config);
+      const currentRequest = this._fetcher.request<T>(config);
       this._onGoingReq.set(key, currentRequest);
 
       return await currentRequest;
-    } catch (e) {
-      const error = e as AxiosError<APIError>;
-      const { response } = error;
-
-      const isTokenExpired = response && response.data.code === TOKEN_EXPIRED;
-      const isAbleToRetry = isTokenExpired && shouldRetryWhenTokenExpired;
-
-      if (!isAbleToRetry) {
-        throw error;
-      }
-
-      return this._retryAfterRefreshToken<T, P>(config);
     } finally {
       this._onGoingReq.delete(key);
     }
   }
 
   public async request<T, P extends ReqParams>(
-    config: RequestConfig<P>,
-    shouldRetryWhenTokenExpired = true
+    config: RequestConfig<P>
   ): Promise<T> {
     try {
-      const { data } = await this.requestRaw<T, P>(
-        config,
-        shouldRetryWhenTokenExpired
-      );
+      const { data } = await this.requestRaw<T, P>(config);
       return data;
     } catch (e) {
-      const error = e as AxiosError<APIError>;
+      const error = e as AxiosError;
       throw error.response?.data ?? error.response ?? error;
     }
   }
 }
 
 export type { Http };
+
 export const http = new Http({
   baseURL: BASE_URL,
 });

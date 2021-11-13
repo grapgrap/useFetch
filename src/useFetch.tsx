@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import useSWR, { KeyedMutator, SWRConfiguration } from 'swr';
 import { castConfigWithDef } from './castConfigWithDef';
 import { http } from './http';
-import { APIDef, APIError } from './types';
+import { APIDef } from './types';
 
 type UseFetch<Data> = {
   data?: Data;
@@ -28,7 +28,7 @@ export const useFetch = <Data, Params>(
   const merged = { ...axiosConfig, ...config };
 
   const key = config.url ? stringify(merged) : null;
-  const { data, error, mutate, isValidating } = useSWR<Data, APIError>(
+  const { data, error, mutate, isValidating } = useSWR<Data>(
     key,
     !merged.url ? null : () => http.request<Data, Params>(merged),
     {
