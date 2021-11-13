@@ -65,6 +65,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:27.3.1"],
             ["lint-staged", "npm:11.2.3"],
             ["msw", "npm:0.35.0"],
+            ["pinst", "npm:2.1.6"],
             ["prettier", "npm:2.4.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:17.0.2"],
@@ -2645,6 +2646,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:27.3.1"],
             ["lint-staged", "npm:11.2.3"],
             ["msw", "npm:0.35.0"],
+            ["pinst", "npm:2.1.6"],
             ["prettier", "npm:2.4.1"],
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:17.0.2"],
@@ -5832,6 +5834,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["fromentries", [
+        ["npm:1.3.2", {
+          "packageLocation": "./.yarn/cache/fromentries-npm-1.3.2-f5392090b8-33729c529c.zip/node_modules/fromentries/",
+          "packageDependencies": [
+            ["fromentries", "npm:1.3.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["fs-minipass", [
         ["npm:2.1.0", {
           "packageLocation": "./.yarn/cache/fs-minipass-npm-2.1.0-501ef87306-1b8d128dae.zip/node_modules/fs-minipass/",
@@ -8364,6 +8375,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/picomatch-npm-2.3.0-5e60e6c82d-16818720ea.zip/node_modules/picomatch/",
           "packageDependencies": [
             ["picomatch", "npm:2.3.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["pinst", [
+        ["npm:2.1.6", {
+          "packageLocation": "./.yarn/cache/pinst-npm-2.1.6-750cbdedeb-3644c352a7.zip/node_modules/pinst/",
+          "packageDependencies": [
+            ["pinst", "npm:2.1.6"],
+            ["fromentries", "npm:1.3.2"]
           ],
           "linkType": "HARD",
         }]
