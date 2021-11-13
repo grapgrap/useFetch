@@ -29,9 +29,7 @@ export const useFetch = <Data, Params>(
   const { data, error, mutate, isValidating } = useSWR<Data>(
     key,
     !merged.url ? null : () => http.request<Data, Params>(merged),
-    {
-      ...swrConfig,
-    }
+    { ...swrConfig }
   );
 
   return useMemo(

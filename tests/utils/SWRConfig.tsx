@@ -5,7 +5,9 @@ export const TestSWRConfig: FC = ({ children }) => {
   return (
     <SWRConfig
       value={{
+        shouldRetryOnError: false,
         dedupingInterval: 0,
+        provider: () => new Map(),
       }}
     >
       {children}
