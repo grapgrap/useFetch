@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import stringify from 'fast-json-stable-stringify';
-import { ReqParams, RequestConfig } from './types';
+import { APIError, ReqParams, RequestConfig } from './types';
 import { isNil } from './utils/isNil';
 
 const BASE_URL = process.env.BASE_URL;
@@ -53,7 +53,7 @@ class Http {
       const { data } = await this.requestRaw<T, P>(config);
       return data;
     } catch (e) {
-      const error = e as AxiosError;
+      const error = e as AxiosError<APIError>;
       throw error.response?.data ?? error.response ?? error;
     }
   }

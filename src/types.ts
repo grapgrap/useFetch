@@ -8,6 +8,8 @@ export type ReqParams = {
   body?: never;
 };
 
+export type APIError = Record<string, unknown>;
+
 export type RequestConfig<P extends ReqParams> = P &
   Omit<AxiosRequestConfig, 'params' | 'data'>;
 

@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import useSWR, { KeyedMutator, SWRConfiguration } from 'swr';
 import { castConfigWithDef } from './castConfigWithDef';
 import { http } from './http';
-import { APIDef } from './types';
+import { APIDef, APIError } from './types';
 
 type UseFetch<Data> = {
   data?: Data;
