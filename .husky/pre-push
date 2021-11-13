@@ -13,13 +13,15 @@ git diff HEAD --quiet || (
 echo '🏗️ 👷 Type Checking...'
 
 yarn type || (
-  echo '❌ ❌ ❌ Type check Failed ❌ ❌ ❌'
+  echo '❌ ❌ ❌ Type check Failed ❌ ❌ ❌';
+  false;
 )
 
 echo '🏗️ 👷 Testing...'
 
 yarn test || (
-  echo '❌ ❌ ❌ Build Failed ❌ ❌ ❌'
+  echo '❌ ❌ ❌ Build Failed ❌ ❌ ❌';
+  false;
 )
 
 echo '✅ ✅ ✅ All passed. Pushing them. ✅ ✅ ✅'
