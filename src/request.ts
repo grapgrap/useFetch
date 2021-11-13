@@ -1,7 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 import { castConfigWithDef } from './castConfigWithDef';
-import { http } from './http';
 import { APIDef } from './types';
+import { http } from './__core__/http';
 
 export const request = <Data, Params>(
   def: APIDef<Data, Params>,

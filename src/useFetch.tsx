@@ -3,8 +3,8 @@ import stringify from 'fast-json-stable-stringify';
 import { useMemo } from 'react';
 import useSWR, { KeyedMutator, SWRConfiguration } from 'swr';
 import { castConfigWithDef } from './castConfigWithDef';
-import { http } from './http';
 import { APIDef, APIError } from './types';
+import { http } from './__core__/http';
 
 type UseFetch<Data> = {
   data?: Data;

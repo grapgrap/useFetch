@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import stringify from 'fast-json-stable-stringify';
-import { APIError, ReqParams, RequestConfig } from './types';
-import { isNil } from './utils/isNil';
+import { APIError, ReqParams, RequestConfig } from '../types';
+import { isNil } from '../utils/isNil';
 
 const BASE_URL = process.env.BASE_URL;
 

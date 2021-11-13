@@ -1,4 +1,4 @@
-import { isNil } from './utils/isNil';
+import { isNil } from '../utils/isNil';
 
 export const transformAppendableValue = (
   value: unknown

@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { http } from 'src/http';
+import { http } from 'src/__core__/http';
 
 const success = { status: 'success' };
 const error = { code: 'server error' };

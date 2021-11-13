@@ -1,5 +1,5 @@
+import { ReqParams, RequestConfig } from '../types';
 import { transformAppendableValue } from './transformAppendableValue';
-import { ReqParams, RequestConfig } from './types';
 
 const isBlob = (value: unknown): value is File | Blob =>
   value instanceof Blob || value instanceof File;

@@ -1,6 +1,6 @@
+import { APIDef, ReqParams, RequestConfig } from '../types';
 import { interpolateUrl } from './interpolateUrl';
 import { transformFormDataForAttachments } from './transformFormData';
-import { APIDef, ReqParams, RequestConfig } from './types';
 
 export const castConfigWithDef = <Data, Params extends ReqParams>(
   def: APIDef<Data, Params>,

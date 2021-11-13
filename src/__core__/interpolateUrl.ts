@@ -1,4 +1,4 @@
-import { ReqParams } from './types';
+import { ReqParams } from '../types';
 
 const startBracket = '{' as const;
 const endBracket = '}' as const;

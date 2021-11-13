@@ -1,8 +1,8 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { http } from 'src/http';
 import { APIDef } from 'src/types';
 import { useFetch } from 'src/useFetch';
+import { http } from 'src/__core__/http';
 import { renderHook } from './utils/renderHook';
 
 const server = setupServer(
