@@ -1,13 +1,8 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import stringify from 'fast-json-stable-stringify';
 import { APIError, ReqParams, RequestConfig } from '../types';
-import { isNil } from '../utils/isNil';
 
-const BASE_URL = process.env.BASE_URL;
-
-if (isNil(BASE_URL)) {
-  throw Error('[http]: BASE_URL is undefined. Please check your env variable');
-}
+const BASE_URL = process.env.BASE_URL ?? process.env.REACT_APP_BASE_URL ?? '';
 
 type HttpOptions = {
   baseURL: string;
