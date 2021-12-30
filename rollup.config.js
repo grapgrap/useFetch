@@ -6,22 +6,12 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
-import PKG_JSON from './package.json';
 
 const plugins = [
   resolve({
     browser: true,
   }),
   commonjs(),
-  babel({
-    babelHelpers: 'bundled',
-    extensions: ['.ts', '.tsx'],
-  }),
-  typescript({
-    tsconfig: './tsconfig.build.json',
-    declaration: true,
-    declarationDir: '',
-  }),
   terser({
     ecma: 5,
     compress: true,
@@ -29,14 +19,47 @@ const plugins = [
   }),
 ];
 
-const output = [
-  { file: PKG_JSON.main, format: 'cjs' },
-  { file: PKG_JSON.module, format: 'es' },
-];
-
-export default {
+const cjs = {
   input: 'src/index.ts',
   external: ['react', 'react-dom'],
-  output,
-  plugins,
+  output: {
+    dir: 'dist/cjs',
+    format: 'cjs',
+  },
+  plugins: [
+    ...plugins,
+    babel({
+      babelHelpers: 'bundled',
+      extensions: ['.ts', '.tsx'],
+    }),
+    typescript({
+      tsconfig: './tsconfig.build.json',
+      declaration: true,
+      declarationDir: 'dist/cjs',
+      outputToFilesystem: true,
+    }),
+  ],
 };
+
+const esm = {
+  input: 'src/index.ts',
+  external: ['react', 'react-dom'],
+  output: {
+    dir: 'dist/esm',
+    format: 'es',
+    preserveModules: true,
+    preserveModulesRoot: 'src',
+    exports: 'named',
+  },
+  plugins: [
+    ...plugins,
+    typescript({
+      tsconfig: './tsconfig.build.json',
+      declaration: true,
+      declarationDir: 'dist/esm',
+      outputToFilesystem: true,
+    }),
+  ],
+};
+
+export default [cjs, esm];
