@@ -6,6 +6,7 @@
   "module": "dist/index.esm.js",
   "license": "MIT",
   "packageManager": "yarn@3.1.0",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/grapgrap/useFetch.git"
