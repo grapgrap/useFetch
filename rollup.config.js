@@ -53,6 +53,10 @@ const esm = {
   },
   plugins: [
     ...plugins,
+    babel({
+      babelHelpers: 'bundled',
+      extensions: ['.ts', '.tsx'],
+    }),
     typescript({
       tsconfig: './tsconfig.build.json',
       declaration: true,
