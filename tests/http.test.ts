@@ -6,7 +6,7 @@ const success = { status: 'success' };
 const error = { code: 'server error' };
 
 const server = setupServer(
-  rest.get('/get-test/', (req, res, ctx) => {
+  rest.get('/get-test', (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(success));
   }),
   rest.get('/always-fail', (req, res, ctx) => {
@@ -22,7 +22,7 @@ afterEach(() => {
 });
 
 describe('Http Module Test', () => {
-  const config = { url: '/get-test/', method: 'GET' as const };
+  const config = { url: '/get-test', method: 'GET' as const };
 
   describe('requestRaw 테스트', () => {
     it('응답이 오지 않은 요청을 다시 요청하게 되면 이전에 보낸 요청에 묶는다.', async () => {
@@ -53,7 +53,7 @@ describe('Http Module Test', () => {
 
     it('서버 에러가 발생 했을 때 서버 에러가 반환 된다.', async () => {
       try {
-        await http.request({ url: '/always-fail/', method: 'GET' });
+        await http.request({ url: '/always-fail', method: 'GET' });
       } catch (e) {
         expect(e).toEqual(error);
       }
@@ -61,12 +61,12 @@ describe('Http Module Test', () => {
 
     it('서버 에러에 아무런 값이 없으면, axios error를 반환한다.', async () => {
       server.use(
-        rest.get('/network-fail/', (req, res) => {
+        rest.get('/network-fail', (req, res) => {
           return res.networkError('Something went wrong');
         })
       );
       try {
-        await http.request({ url: '/network-fail/', method: 'GET' });
+        await http.request({ url: '/network-fail', method: 'GET' });
       } catch (e) {
         if (e instanceof Error) {
           expect(e.message).toEqual('Network Error');
