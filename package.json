@@ -15,7 +15,7 @@
     "set-husky": "husky install",
     "sdk-update": "yarn dlx @yarnpkg/sdks vscode",
     "postinstall": "yarn set-husky && yarn sdk-update",
-    "test": "jest --config jest.config.js",
+    "test": "jest --config jest.config.js --runInBand",
     "clean:cache": "rm -rf tsconfig.tsbuildinfo",
     "clean:dist": "rm -rf dist",
     "build": "yarn clean:dist && parcel build",

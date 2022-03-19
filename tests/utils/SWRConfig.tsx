@@ -8,6 +8,7 @@ export const TestSWRConfig: FC = ({ children }) => {
         shouldRetryOnError: false,
         dedupingInterval: 0,
         provider: () => new Map(),
+        suspense: false,
       }}
     >
       {children}
