@@ -1,5 +1,5 @@
-export { request } from './request';
-export { requestRaw } from './requestRaw';
-export type { APIDef, InferModel, InferParams } from './types';
+/// <reference types="./env" />
+
+export { http } from './http';
 export * from './useFetch';
-export { http, Http } from './__core__';
+export * from './useToken';

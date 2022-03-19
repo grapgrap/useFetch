@@ -1774,6 +1774,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@grapgrap/use-fetch@workspace:."
   dependencies:
+    "@parcel/packager-ts": 2.3.2
+    "@parcel/transformer-typescript-types": 2.3.2
     "@swc/core": ^1.2.158
     "@swc/jest": ^0.2.20
     "@testing-library/jest-dom": ^5.14.1
@@ -2760,6 +2762,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@parcel/packager-ts@npm:2.3.2":
+  version: 2.3.2
+  resolution: "@parcel/packager-ts@npm:2.3.2"
+  dependencies:
+    "@parcel/plugin": 2.3.2
+  checksum: 852a4a33e5fd084af517ba0b48987a8225cf850cedac3f59044295dd99ae0d09e15d4c1ec72b16f40804b19fcf68618436d814541cd2f4a2c48c49855a013dcc
+  languageName: node
+  linkType: hard
+
 "@parcel/plugin@npm:2.3.2":
   version: 2.3.2
   resolution: "@parcel/plugin@npm:2.3.2"
@@ -3004,6 +3015,32 @@ __metadata:
     posthtml-render: ^3.0.0
     semver: ^5.7.1
   checksum: 6de3f7be314c6e685b2c9c56e8193cbbdb1ab40581be9dede30a4e9301596fb0349f70bb2cdcb75327da0d5e62ad789e3ce8ec067239b643f065d54d9286fade
+  languageName: node
+  linkType: hard
+
+"@parcel/transformer-typescript-types@npm:2.3.2":
+  version: 2.3.2
+  resolution: "@parcel/transformer-typescript-types@npm:2.3.2"
+  dependencies:
+    "@parcel/diagnostic": 2.3.2
+    "@parcel/plugin": 2.3.2
+    "@parcel/source-map": ^2.0.0
+    "@parcel/ts-utils": 2.3.2
+    nullthrows: ^1.1.1
+  peerDependencies:
+    typescript: ">=3.0.0"
+  checksum: 89b2aaf765b4fcccd0a6b3afecf8a6c7dc17417ba63f931b18ac391f79dd3d7218fb1e53948a24c5429e6416fae19947cbf161ee76064572795e4982066c26e6
+  languageName: node
+  linkType: hard
+
+"@parcel/ts-utils@npm:2.3.2":
+  version: 2.3.2
+  resolution: "@parcel/ts-utils@npm:2.3.2"
+  dependencies:
+    nullthrows: ^1.1.1
+  peerDependencies:
+    typescript: ">=3.0.0"
+  checksum: 9cabf8de2e273b94160b6d2b4821c6dfba04db3bee61d1e165ef742bd2d56a7a4098066f61cc0c0af135fa9ad12c254736922de1db63528a294400dcb2623f5d
   languageName: node
   linkType: hard
 
