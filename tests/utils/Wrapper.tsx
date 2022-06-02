@@ -1,10 +1,10 @@
-import { ReactElement, ReactNode } from 'react';
+import { FC, ReactElement } from 'react';
 import { TestSWRConfig } from './SWRConfig';
 
-type Props = {
-  children?: ReactNode;
+type Props = Record<string, unknown> & {
+  children: ReactElement;
 };
 
-export function Wrapper({ children }: Props): ReactElement {
+export const Wrapper: FC<Props> = ({ children }) => {
   return <TestSWRConfig>{children}</TestSWRConfig>;
-}
+};

@@ -3,7 +3,7 @@ import { setupServer } from 'msw/node';
 import { APIDef } from 'src/types';
 import { useFetch } from 'src/useFetch';
 import { http } from 'src/__core__/http';
-import { renderHook } from './utils/renderHook';
+import { renderHook, waitFor } from './utils/react';
 
 const server = setupServer(
   rest.get('/test-url-stub/', (req, res, ctx) => {
@@ -40,18 +40,18 @@ describe('useFetch Hook Test', () => {
   const requestSpy = jest.spyOn(http, 'request');
 
   it('훅은 APIDef를 통해 정의된 API 스펙으로 API 호출을 한다.', async () => {
-    const { result, waitFor } = renderHook(() => useFetch(def));
+    const { result } = renderHook(() => useFetch(def));
     expect(requestSpy).toBeCalledWith(def);
 
     await waitFor(() => !result.current.loading);
   });
 
   it('훅은 수신한 데이터를 data에 반환한다.', async () => {
-    const { result, waitFor } = renderHook(() => useFetch(def));
+    const { result } = renderHook(() => useFetch(def));
 
-    await waitFor(() => !!result.current.data);
-
-    expect(result.current.data).toEqual({ id: '12345' });
+    await waitFor(() => {
+      expect(result.current.data).toEqual({ id: '12345' });
+    });
   });
 
   it('훅은 수신한 에러를 error에 반환한다.', async () => {
@@ -67,24 +67,24 @@ describe('useFetch Hook Test', () => {
       })
     );
 
-    const { result, waitFor } = renderHook(() => useFetch(def));
+    const { result } = renderHook(() => useFetch(def));
 
-    await waitFor(() => !!result.current.error);
-
-    expect(result.current.error).toEqual({
-      code: 'SOME_API_ERROR',
-      message: 'Something went wrong',
+    await waitFor(() => {
+      expect(result.current.error).toEqual({
+        code: 'SOME_API_ERROR',
+        message: 'Something went wrong',
+      });
     });
   });
 
   it('API Def의 url은 interpolated 될 수 있다.', async () => {
-    const { result, waitForValueToChange } = renderHook(() =>
+    const { result } = renderHook(() =>
       useFetch(needInterpolateDef, { params: { stub: 'stub' } })
     );
 
-    await waitForValueToChange(() => result.current.data);
-
-    expect(result.current.data).toEqual({ stub: 'stub' });
+    await waitFor(() => {
+      expect(result.current.data).toEqual({ stub: 'stub' });
+    });
   });
 
   it('API Def의 url이 interpolated 될 수 없으면, API를 호출 하지 않는다.', () => {

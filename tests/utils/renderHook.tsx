@@ -1,4 +1,4 @@
-import { renderHook as _renderHook } from '@testing-library/react-hooks';
+import { renderHook as _renderHook } from '@testing-library/react';
 import { Wrapper } from './Wrapper';
 
 const renderHook: typeof _renderHook = (callback, options = {}) => {
@@ -18,5 +18,4 @@ const renderHook: typeof _renderHook = (callback, options = {}) => {
   });
 };
 
-export * from '@testing-library/react-hooks';
 export { renderHook };

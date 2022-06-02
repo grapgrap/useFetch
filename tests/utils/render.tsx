@@ -3,10 +3,14 @@ import {
   RenderOptions,
   RenderResult,
 } from '@testing-library/react';
-import { FC } from 'react';
+import { FC, ReactElement } from 'react';
 import { TestSWRConfig } from './SWRConfig';
 
-const Wrapper: FC = ({ children }) => {
+type Props = {
+  children: ReactElement;
+};
+
+const Wrapper: FC<Props> = ({ children }) => {
   return <TestSWRConfig>{children}</TestSWRConfig>;
 };
 
@@ -30,5 +34,4 @@ const render = (
   });
 };
 
-export * from '@testing-library/react';
 export { render };
