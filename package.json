@@ -6,7 +6,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "license": "MIT",
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.6.3",
   "files": [
     "dist"
   ],
@@ -42,19 +42,19 @@
     "@typescript-eslint/eslint-plugin": "^5.27.0",
     "@typescript-eslint/parser": "^5.27.0",
     "dotenv": "^16.0.1",
-    "eslint": "^8.16.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint": "^8.47.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.1",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
     "lint-staged": "^13.0.0",
     "msw": "^0.42.0",
-    "prettier": "^2.6.2",
+    "prettier": "^3.0.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "tslib": "^2.4.0",
-    "typescript": "^4.7.2"
+    "typescript": "^5.2.2"
   }
 }
