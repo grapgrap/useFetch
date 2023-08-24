@@ -6339,7 +6339,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["object-inspect", "npm:1.12.2"],\
             ["pidtree", "npm:0.5.0"],\
             ["string-argv", "npm:0.3.1"],\
-            ["yaml", "npm:2.1.1"]\
+            ["yaml", "npm:2.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9010,10 +9010,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["yaml", [\
-        ["npm:2.1.1", {\
-          "packageLocation": "./.yarn/cache/yaml-npm-2.1.1-e717f9b915-f48bb20991.zip/node_modules/yaml/",\
+        ["npm:2.3.1", {\
+          "packageLocation": "./.yarn/cache/yaml-npm-2.3.1-743f5688d1-2c7bc9a7cd.zip/node_modules/yaml/",\
           "packageDependencies": [\
-            ["yaml", "npm:2.1.1"]\
+            ["yaml", "npm:2.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
