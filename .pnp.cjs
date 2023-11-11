@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.10"],\
             ["@typescript-eslint/eslint-plugin", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:5.27.0"],\
             ["@typescript-eslint/parser", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:5.27.0"],\
-            ["axios", "npm:0.27.2"],\
+            ["axios", "npm:1.6.1"],\
             ["dotenv", "npm:16.0.1"],\
             ["eslint", "npm:8.47.0"],\
             ["eslint-config-prettier", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:9.0.0"],\
@@ -1059,7 +1059,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.10"],\
             ["@typescript-eslint/eslint-plugin", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:5.27.0"],\
             ["@typescript-eslint/parser", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:5.27.0"],\
-            ["axios", "npm:0.27.2"],\
+            ["axios", "npm:1.6.1"],\
             ["dotenv", "npm:16.0.1"],\
             ["eslint", "npm:8.47.0"],\
             ["eslint-config-prettier", "virtual:807e2f7f6237564ae6fa7bfa41c6342528a88e9ed45d66e7002fb7773e404a1fb69536ef1eb8b1c9250363106e6e1dbb8b1c743a5c0980de65e8b28bec535a3a#npm:9.0.0"],\
@@ -2730,12 +2730,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["axios", [\
-        ["npm:0.27.2", {\
-          "packageLocation": "./.yarn/cache/axios-npm-0.27.2-dbe3a48aea-38cb754046.zip/node_modules/axios/",\
+        ["npm:1.6.1", {\
+          "packageLocation": "./.yarn/cache/axios-npm-1.6.1-ffaff76449-573f03f59b.zip/node_modules/axios/",\
           "packageDependencies": [\
-            ["axios", "npm:0.27.2"],\
-            ["follow-redirects", "virtual:dbe3a48aea1dd5649e16abaf23d4ae05582d2149e16141955113766a0f84f681baf358c77ddccfc82eb23e4ccc66c6c912df62a9c01f2a83f1842bf86cc297b1#npm:1.15.1"],\
-            ["form-data", "npm:4.0.0"]\
+            ["axios", "npm:1.6.1"],\
+            ["follow-redirects", "virtual:ffaff76449f02e83712a7d24e03c564489516739c78ebeffb0fbcdb3893ad9a0e48504f9acfa70fe6f16debe9c8dabde3679d63bf648278ea98a5ff38cf77a9e#npm:1.15.3"],\
+            ["form-data", "npm:4.0.0"],\
+            ["proxy-from-env", "npm:1.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4423,17 +4424,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["follow-redirects", [\
-        ["npm:1.15.1", {\
-          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.15.1-6b191885cd-6aa4e3e3cd.zip/node_modules/follow-redirects/",\
+        ["npm:1.15.3", {\
+          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.15.3-ca69c47b72-584da22ec5.zip/node_modules/follow-redirects/",\
           "packageDependencies": [\
-            ["follow-redirects", "npm:1.15.1"]\
+            ["follow-redirects", "npm:1.15.3"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:dbe3a48aea1dd5649e16abaf23d4ae05582d2149e16141955113766a0f84f681baf358c77ddccfc82eb23e4ccc66c6c912df62a9c01f2a83f1842bf86cc297b1#npm:1.15.1", {\
-          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-659894389a/0/cache/follow-redirects-npm-1.15.1-6b191885cd-6aa4e3e3cd.zip/node_modules/follow-redirects/",\
+        ["virtual:ffaff76449f02e83712a7d24e03c564489516739c78ebeffb0fbcdb3893ad9a0e48504f9acfa70fe6f16debe9c8dabde3679d63bf648278ea98a5ff38cf77a9e#npm:1.15.3", {\
+          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-64034f7132/0/cache/follow-redirects-npm-1.15.3-ca69c47b72-584da22ec5.zip/node_modules/follow-redirects/",\
           "packageDependencies": [\
-            ["follow-redirects", "virtual:dbe3a48aea1dd5649e16abaf23d4ae05582d2149e16141955113766a0f84f681baf358c77ddccfc82eb23e4ccc66c6c912df62a9c01f2a83f1842bf86cc297b1#npm:1.15.1"],\
+            ["follow-redirects", "virtual:ffaff76449f02e83712a7d24e03c564489516739c78ebeffb0fbcdb3893ad9a0e48504f9acfa70fe6f16debe9c8dabde3679d63bf648278ea98a5ff38cf77a9e#npm:1.15.3"],\
             ["@types/debug", null],\
             ["debug", null]\
           ],\
@@ -7408,6 +7409,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["loose-envify", "npm:1.4.0"],\
             ["object-assign", "npm:4.1.1"],\
             ["react-is", "npm:16.13.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["proxy-from-env", [\
+        ["npm:1.1.0", {\
+          "packageLocation": "./.yarn/cache/proxy-from-env-npm-1.1.0-c13d07f26b-ed7fcc2ba0.zip/node_modules/proxy-from-env/",\
+          "packageDependencies": [\
+            ["proxy-from-env", "npm:1.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\
